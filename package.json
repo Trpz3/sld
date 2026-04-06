@@ -1,0 +1,29 @@
+{
+  "name": "sld-viewer",
+  "version": "1.0.0",
+  "description": "Single Line Diagram (SLD) Viewer Module",
+  "main": "dist/sld-viewer.umd.cjs",
+  "module": "dist/sld-viewer.js",
+  "types": "dist/sld-viewer.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sync-symbols": "cat js/symbols/registry.js | sed 's/window.SLDSymbols =/export const SLDSymbols =/' > js/lib/SLDSymbols.js"
+  },
+  "keywords": [
+    "sld",
+    "viewer",
+    "diagram",
+    "engineering",
+    "electrical"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}

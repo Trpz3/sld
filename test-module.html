@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLDViewer Module Test</title>
+    <link rel="stylesheet" href="./dist/sld-viewer.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #my-viewer-container {
+            flex: 1;
+            border: 2px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: white;
+            font-family: sans-serif;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>SLD Module Test (Rotation & HTML)</h2>
+    <div id="my-viewer-container"></div>
+
+    <script src="./dist/sld-viewer.umd.js"></script>
+
+    <script>
+        const SLDV = window.SLDViewer.default || window.SLDViewer;
+
+        const sampleConfig = {
+            nodes: [
+                {
+                    id: 'node_1',
+                    symbolId: 'main_grid_utility',
+                    name: 'Utility Grid',
+                    x: 100, y: 100, width: 100, height: 100,
+                    status: 'healthy',
+                    slots: { bottom: ['voltage', 'freq'] },
+                    slotRotation: { bottom: 0 }
+                },
+                {
+                    id: 'node_2',
+                    symbolId: 'transformer',
+                    name: 'Main TR',
+                    x: 400, y: 100, width: 100, height: 100,
+                    status: 'healthy',
+                    slots: { right: ['load', 'temp'] },
+                    slotRotation: { right: -90 } // Rotate right group!
+                },
+                {
+                    id: 'node_3',
+                    symbolId: 'vcb',
+                    name: 'Incomer VCB',
+                    x: 700, y: 100, width: 100, height: 100,
+                    status: 'alarm',
+                    slots: { left: ['current', 'pow'] },
+                    slotRotation: { left: 90 } // Rotate left group!
+                }
+            ],
+            connections: [
+                { id: 'conn_1', from: 'node_1', to: 'node_2', type: 'auto', arrowMode: 'forward' },
+                { id: 'conn_2', from: 'node_2', to: 'node_3', type: 'auto', arrowMode: 'both' }
+            ]
+        };
+
+        const viewer = new SLDV('my-viewer-container', {
+            config: sampleConfig,
+            hideSlotKeys: true, 
+            poll: {
+                interval: 2000,
+                fetch: async () => {
+                    return {
+                        'node_1': {
+                            voltage: `<b>${(220 + Math.random() * 5).toFixed(1)}</b> V`,
+                            freq: '<span style="color: #22c55e">50.0 Hz</span>',
+                            status: Math.random() > 0.8 ? 'alarm' : 'stale'
+                        },
+                        'node_2': {
+                            load: `<b>${(70 + Math.random() * 10).toFixed(1)}%</b>`,
+                            temp: '45°C',
+                            status: Math.random() > 0.8 ? 'alarm' : 'stale'
+                        },
+                        'node_3': {
+                            current: `<b>${(120 + Math.random() * 10).toFixed(1)}</b> A`,
+                            pow: '<small>Active Power</small>',
+                            status: Math.random() > 0.8 ? 'alarm' : 'healthy'
+                        }
+                    };
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
