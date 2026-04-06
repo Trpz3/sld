@@ -6,7 +6,7 @@
 
 A high-performance, professional-grade Single Line Diagram (SLD) logic designer and rendering engine. Built with vanilla JavaScript and SVG, designed for electrical engineering, industrial automation, and power systems monitoring.
 
-[**Explore the Live Demo »**](https://your-live-demo-url.com)
+[**Explore the Live Demo »**](https://trpz3.github.io/sld/)
 
 ---
 
