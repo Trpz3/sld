@@ -4,21 +4,9 @@ export const SLDSymbols = [
     name: "Main Grid Utility",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-        <!-- Main Grid Utility Symbol: A Circle with an Inner Zig-Zag or Sinusoidal Wave -->
-
         <!-- Outer Circle -->
 
-        <circle cx="50" cy="50" r="40" />
-
-        <!-- Horizontal Connection Line (Left) -->
-
-        <line x1="0" y1="50" x2="10" y2="50" />
-
-        <!-- Horizontal Connection Line (Right) -->
-
-        <line x1="90" y1="50" x2="100" y2="50" />
-
+        <circle cx="50" cy="50" r="48" />
         <!-- AC Sine Wave Representation in the middle -->
 
         <path d="M 25 50 C 35 30, 40 30, 50 50 C 60 70, 65 70, 75 50" />
@@ -39,22 +27,11 @@ export const SLDSymbols = [
 
         <!-- Primary Winding (Left/Top Circle) -->
 
-        <circle cx="40" cy="50" r="25" />
+        <circle cx="35" cy="50" r="30" />
 
         <!-- Secondary Winding (Right/Bottom Circle) -->
 
-        <circle cx="60" cy="50" r="25" />
-
-        <!-- Connection Line (Left/Input) -->
-
-        <line x1="0" y1="50" x2="15" y2="50" />
-
-        <!-- Connection Line (Right/Output) -->
-
-        <line x1="85" y1="50" x2="100" y2="50" />
-
-        <!-- Optional labels or phase indicators could be added here -->
-
+        <circle cx="65" cy="50" r="30" />
     </svg>`
   },
   {
@@ -65,22 +42,12 @@ export const SLDSymbols = [
 
         <!-- Main Circle for the Generator -->
 
-        <circle cx="50" cy="50" r="40" />
+        <circle cx="50" cy="50" r="48" />
 
         <!-- "G" Lettering to denote Generator -->
 
         <path d="M 62 40 C 60 32, 40 32, 38 50 C 40 68, 60 68, 62 60 L 50 60" />
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="10" />
-
-        <!-- Prime Mover indicator (Zig-zag line outside or specific marking) -->
-
-        <!-- Here we add a small shaft indicator at the bottom -->
-
-        <line x1="45" y1="90" x2="55" y2="90" />
-        <line x1="50" y1="90" x2="50" y2="100" />
     </svg>`
   },
   {
@@ -91,20 +58,12 @@ export const SLDSymbols = [
 
         <!-- Main Box for the Breaker -->
 
-        <rect x="30" y="30" width="40" height="40" />
+        <rect x="1" y="1" width="98" height="98" />
 
         <!-- "X" inside the box to signify a Circuit Breaker (VCB/ACB) -->
 
-        <line x1="30" y1="30" x2="70" y2="70" />
-        <line x1="70" y1="30" x2="30" y2="70" />
-
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="30" />
-
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="70" x2="50" y2="100" />
+        <line x1="10" y1="10" x2="90" y2="90" />
+        <line x1="90" y1="10" x2="10" y2="90" />
     </svg>`
   },
   {
@@ -113,48 +72,37 @@ export const SLDSymbols = [
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="30" />
 
         <!-- VCB Symbol: Box with 'X' and vertical bar or standard rectangle with crossing lines -->
 
-        <rect x="30" y="30" width="40" height="40" />
-        <line x1="30" y1="30" x2="70" y2="70" />
-        <line x1="70" y1="30" x2="30" y2="70" />
+        <rect x="1" y="1" width="98" height="98" />
+        <line x1="10" y1="10" x2="90" y2="90" />
+        <line x1="90" y1="10" x2="10" y2="90" />
 
         <!-- Horizontal internal separation often used for VCB -->
 
-        <line x1="30" y1="50" x2="70" y2="50" />
+        <line x1="10" y1="50" x2="90" y2="50" />
 
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="70" x2="50" y2="100" />
     </svg>`
   },
   {
     id: "acb",
     name: "ACB",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="30" />
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
 
         <!-- ACB Symbol: Box with horizontal line and contact indicators -->
 
-        <rect x="30" y="30" width="40" height="40" />
+        <rect x="1" y="1" width="98" height="98" />
 
         <!-- Horizontal central line -->
 
-        <line x1="30" y1="50" x2="70" y2="50" />
+        <line x1="10" y1="50" x2="90" y2="50" />
 
         <!-- Vertical contact indicator (differentiating ACB) -->
 
-        <line x1="50" y1="30" x2="50" y2="70" />
+        <line x1="50" y1="10" x2="50" y2="90" />
 
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="70" x2="50" y2="100" />
     </svg>`
   },
   {
@@ -163,19 +111,13 @@ export const SLDSymbols = [
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="35" />
 
         <!-- MCCB Symbol: Smaller rectangular housing with 'X' -->
 
-        <rect x="35" y="35" width="30" height="30" />
-        <line x1="35" y1="35" x2="65" y2="65" />
-        <line x1="65" y1="35" x2="35" y2="65" />
+        <rect x="1" y="1" width="98" height="98" />
+        <line x1="10" y1="10" x2="90" y2="90" />
+        <line x1="90" y1="10" x2="10" y2="90" />
 
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="65" x2="50" y2="100" />
     </svg>`
   },
   {
@@ -213,19 +155,12 @@ export const SLDSymbols = [
 
         <!-- Main Square for the Relay Housing -->
 
-        <rect x="25" y="25" width="50" height="50" />
+        <rect x="1" y="1" width="98" height="98" />
 
         <!-- "R" Lettering to denote Relay -->
 
         <path d="M 42 40 L 52 40 C 56 40, 58 42, 58 45 C 58 48, 56 50, 52 50 L 42 50 L 42 60 M 50 50 L 58 60" />
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="25" />
-
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="75" x2="50" y2="100" />
     </svg>`
   },
   {
@@ -1297,9 +1232,6 @@ export const SLDSymbols = [
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Electrical Connection Lead (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="20" />
 
         <!-- Injection Unit (Right side) -->
 
@@ -1324,9 +1256,7 @@ export const SLDSymbols = [
         <line x1="80" y1="80" x2="80" y2="90" />
         <line x1="10" y1="90" x2="95" y2="90" />
 
-        <!-- Label -->
 
-        <text x="35" y="25" fill="white" font-family="Arial" font-size="8" stroke="none">IMM</text>
     </svg>`
   },
   {
@@ -1335,9 +1265,6 @@ export const SLDSymbols = [
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Electrical Connection Lead (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="20" />
 
         <!-- Extruder Barrel (Main Body) -->
 
@@ -1368,9 +1295,6 @@ export const SLDSymbols = [
         <line x1="80" y1="80" x2="80" y2="90" />
         <line x1="10" y1="90" x2="95" y2="90" />
 
-        <!-- Label -->
-
-        <text x="35" y="25" fill="white" font-family="Arial" font-size="8" stroke="none">EXTRUSION</text>
     </svg>`
   },
   {
@@ -2479,8 +2403,6 @@ export const SLDSymbols = [
     name: "Room",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Electrical Connection Lead (Top) -->
-        <line x1="50" y1="0" x2="50" y2="20" />
 
         <!-- Room Boundary / Walls -->
         <!-- Top Wall -->
@@ -2513,9 +2435,6 @@ export const SLDSymbols = [
     name: "Area",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Electrical Connection Lead (Top) -->
-        <line x1="50" y1="0" x2="50" y2="10" />
-
         <!-- Area Boundary (Large Hexagonal/Octagonal Zone) -->
         <path d="M 30 15 L 70 15 L 90 35 L 90 75 L 70 95 L 30 95 L 10 75 L 10 35 Z" stroke-dasharray="4,2"
             opacity="0.8" />
@@ -2536,9 +2455,6 @@ export const SLDSymbols = [
     name: "Shop Floor",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Electrical Connection Lead (Top) -->
-        <line x1="50" y1="0" x2="50" y2="10" />
-
         <!-- Shop Floor Boundary (Industrial Roof Profile) -->
         <path d="M 10 35 L 10 90 L 90 90 L 90 35 L 70 20 L 70 35 L 50 20 L 50 35 L 30 20 L 30 35 Z"
             stroke-dasharray="4,2" opacity="0.8" />
@@ -2630,9 +2546,6 @@ export const SLDSymbols = [
     name: "Mold",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Material Feed / Sprue (Top) -->
-        <line x1="50" y1="0" x2="50" y2="25" />
-        <path d="M 45 10 L 50 15 L 55 10" stroke-width="1" />
 
         <!-- Upper Mold Half (Cope) -->
         <rect x="20" y="25" width="60" height="25" rx="1" />
@@ -2659,8 +2572,6 @@ export const SLDSymbols = [
         <line x1="30" y1="85" x2="30" y2="100" />
         <line x1="70" y1="85" x2="70" y2="100" />
 
-        <!-- Label -->
-        <text x="40" y="20" fill="white" font-family="Arial" font-size="8" font-weight="bold" stroke="none"></text>
     </svg>`
   },
   {

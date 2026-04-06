@@ -1,7 +1,8 @@
 # ⚡ SLD Designer & Viewer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.1.0-green.svg)](https://github.com/Trpz3/sld)
+[![npm version](https://img.shields.io/npm/v/@trpz3/sld.svg)](https://www.npmjs.com/package/@trpz3/sld)
+[![npm downloads](https://img.shields.io/npm/dm/@trpz3/sld.svg)](https://www.npmjs.com/package/@trpz3/sld)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Trpz3/sld/pulls)
 
 A high-performance, professional-grade Single Line Diagram (SLD) logic designer and rendering engine. Built with vanilla JavaScript and SVG, designed for electrical engineering, industrial automation, and power systems monitoring.
@@ -30,18 +31,18 @@ A high-performance, professional-grade Single Line Diagram (SLD) logic designer 
 ## 🚀 Quick Start
 
 ### 1. Installation
-Clone the repository and install the development dependencies:
+Install the package via NPM:
 
 ```bash
-git clone https://github.com/Trpz3/sld.git
-cd sld
-npm install
+npm i @trpz3/sld
 ```
 
-### 2. Launch Designer
-Start the local development server to use the Designer:
-
+### 2. Development (Local)
+If you want to contribute or use the Designer locally:
 ```bash
+git clone https://github.com/trpz3/sld.git
+cd sld
+npm install
 npm run dev
 ```
 Navigate to `http://localhost:5173` to start building your diagram.
@@ -72,7 +73,7 @@ The output will be available in the `dist/` directory.
 Integrating the viewer into your existing dashboard is simple:
 
 ```javascript
-import { SLDViewer } from './dist/sld-viewer.js';
+import { SLDViewer } from '@trpz3/sld';
 
 const viewer = new SLDViewer('sld-container', {
     config: mySavedConfigJson, // The JSON exported from the Designer

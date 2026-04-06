@@ -4,21 +4,9 @@ const D = [
     name: "Main Grid Utility",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-        <!-- Main Grid Utility Symbol: A Circle with an Inner Zig-Zag or Sinusoidal Wave -->
-
         <!-- Outer Circle -->
 
-        <circle cx="50" cy="50" r="40" />
-
-        <!-- Horizontal Connection Line (Left) -->
-
-        <line x1="0" y1="50" x2="10" y2="50" />
-
-        <!-- Horizontal Connection Line (Right) -->
-
-        <line x1="90" y1="50" x2="100" y2="50" />
-
+        <circle cx="50" cy="50" r="48" />
         <!-- AC Sine Wave Representation in the middle -->
 
         <path d="M 25 50 C 35 30, 40 30, 50 50 C 60 70, 65 70, 75 50" />
@@ -39,22 +27,11 @@ const D = [
 
         <!-- Primary Winding (Left/Top Circle) -->
 
-        <circle cx="40" cy="50" r="25" />
+        <circle cx="35" cy="50" r="30" />
 
         <!-- Secondary Winding (Right/Bottom Circle) -->
 
-        <circle cx="60" cy="50" r="25" />
-
-        <!-- Connection Line (Left/Input) -->
-
-        <line x1="0" y1="50" x2="15" y2="50" />
-
-        <!-- Connection Line (Right/Output) -->
-
-        <line x1="85" y1="50" x2="100" y2="50" />
-
-        <!-- Optional labels or phase indicators could be added here -->
-
+        <circle cx="65" cy="50" r="30" />
     </svg>`
   },
   {
@@ -65,22 +42,12 @@ const D = [
 
         <!-- Main Circle for the Generator -->
 
-        <circle cx="50" cy="50" r="40" />
+        <circle cx="50" cy="50" r="48" />
 
         <!-- "G" Lettering to denote Generator -->
 
         <path d="M 62 40 C 60 32, 40 32, 38 50 C 40 68, 60 68, 62 60 L 50 60" />
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="10" />
-
-        <!-- Prime Mover indicator (Zig-zag line outside or specific marking) -->
-
-        <!-- Here we add a small shaft indicator at the bottom -->
-
-        <line x1="45" y1="90" x2="55" y2="90" />
-        <line x1="50" y1="90" x2="50" y2="100" />
     </svg>`
   },
   {
@@ -91,20 +58,12 @@ const D = [
 
         <!-- Main Box for the Breaker -->
 
-        <rect x="30" y="30" width="40" height="40" />
+        <rect x="1" y="1" width="98" height="98" />
 
         <!-- "X" inside the box to signify a Circuit Breaker (VCB/ACB) -->
 
-        <line x1="30" y1="30" x2="70" y2="70" />
-        <line x1="70" y1="30" x2="30" y2="70" />
-
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="30" />
-
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="70" x2="50" y2="100" />
+        <line x1="10" y1="10" x2="90" y2="90" />
+        <line x1="90" y1="10" x2="10" y2="90" />
     </svg>`
   },
   {
@@ -113,48 +72,37 @@ const D = [
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="30" />
 
         <!-- VCB Symbol: Box with 'X' and vertical bar or standard rectangle with crossing lines -->
 
-        <rect x="30" y="30" width="40" height="40" />
-        <line x1="30" y1="30" x2="70" y2="70" />
-        <line x1="70" y1="30" x2="30" y2="70" />
+        <rect x="1" y="1" width="98" height="98" />
+        <line x1="10" y1="10" x2="90" y2="90" />
+        <line x1="90" y1="10" x2="10" y2="90" />
 
         <!-- Horizontal internal separation often used for VCB -->
 
-        <line x1="30" y1="50" x2="70" y2="50" />
+        <line x1="10" y1="50" x2="90" y2="50" />
 
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="70" x2="50" y2="100" />
     </svg>`
   },
   {
     id: "acb",
     name: "ACB",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="30" />
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
 
         <!-- ACB Symbol: Box with horizontal line and contact indicators -->
 
-        <rect x="30" y="30" width="40" height="40" />
+        <rect x="1" y="1" width="98" height="98" />
 
         <!-- Horizontal central line -->
 
-        <line x1="30" y1="50" x2="70" y2="50" />
+        <line x1="10" y1="50" x2="90" y2="50" />
 
         <!-- Vertical contact indicator (differentiating ACB) -->
 
-        <line x1="50" y1="30" x2="50" y2="70" />
+        <line x1="50" y1="10" x2="50" y2="90" />
 
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="70" x2="50" y2="100" />
     </svg>`
   },
   {
@@ -163,19 +111,13 @@ const D = [
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="35" />
 
         <!-- MCCB Symbol: Smaller rectangular housing with 'X' -->
 
-        <rect x="35" y="35" width="30" height="30" />
-        <line x1="35" y1="35" x2="65" y2="65" />
-        <line x1="65" y1="35" x2="35" y2="65" />
+        <rect x="1" y="1" width="98" height="98" />
+        <line x1="10" y1="10" x2="90" y2="90" />
+        <line x1="90" y1="10" x2="10" y2="90" />
 
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="65" x2="50" y2="100" />
     </svg>`
   },
   {
@@ -213,19 +155,12 @@ const D = [
 
         <!-- Main Square for the Relay Housing -->
 
-        <rect x="25" y="25" width="50" height="50" />
+        <rect x="1" y="1" width="98" height="98" />
 
         <!-- "R" Lettering to denote Relay -->
 
         <path d="M 42 40 L 52 40 C 56 40, 58 42, 58 45 C 58 48, 56 50, 52 50 L 42 50 L 42 60 M 50 50 L 58 60" />
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="25" />
-
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="75" x2="50" y2="100" />
     </svg>`
   },
   {
@@ -1297,9 +1232,6 @@ const D = [
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Electrical Connection Lead (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="20" />
 
         <!-- Injection Unit (Right side) -->
 
@@ -1324,9 +1256,7 @@ const D = [
         <line x1="80" y1="80" x2="80" y2="90" />
         <line x1="10" y1="90" x2="95" y2="90" />
 
-        <!-- Label -->
 
-        <text x="35" y="25" fill="white" font-family="Arial" font-size="8" stroke="none">IMM</text>
     </svg>`
   },
   {
@@ -1335,9 +1265,6 @@ const D = [
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Electrical Connection Lead (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="20" />
 
         <!-- Extruder Barrel (Main Body) -->
 
@@ -1368,9 +1295,6 @@ const D = [
         <line x1="80" y1="80" x2="80" y2="90" />
         <line x1="10" y1="90" x2="95" y2="90" />
 
-        <!-- Label -->
-
-        <text x="35" y="25" fill="white" font-family="Arial" font-size="8" stroke="none">EXTRUSION</text>
     </svg>`
   },
   {
@@ -2479,8 +2403,6 @@ const D = [
     name: "Room",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Electrical Connection Lead (Top) -->
-        <line x1="50" y1="0" x2="50" y2="20" />
 
         <!-- Room Boundary / Walls -->
         <!-- Top Wall -->
@@ -2513,9 +2435,6 @@ const D = [
     name: "Area",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Electrical Connection Lead (Top) -->
-        <line x1="50" y1="0" x2="50" y2="10" />
-
         <!-- Area Boundary (Large Hexagonal/Octagonal Zone) -->
         <path d="M 30 15 L 70 15 L 90 35 L 90 75 L 70 95 L 30 95 L 10 75 L 10 35 Z" stroke-dasharray="4,2"
             opacity="0.8" />
@@ -2536,9 +2455,6 @@ const D = [
     name: "Shop Floor",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Electrical Connection Lead (Top) -->
-        <line x1="50" y1="0" x2="50" y2="10" />
-
         <!-- Shop Floor Boundary (Industrial Roof Profile) -->
         <path d="M 10 35 L 10 90 L 90 90 L 90 35 L 70 20 L 70 35 L 50 20 L 50 35 L 30 20 L 30 35 Z"
             stroke-dasharray="4,2" opacity="0.8" />
@@ -2630,9 +2546,6 @@ const D = [
     name: "Mold",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Material Feed / Sprue (Top) -->
-        <line x1="50" y1="0" x2="50" y2="25" />
-        <path d="M 45 10 L 50 15 L 55 10" stroke-width="1" />
 
         <!-- Upper Mold Half (Cope) -->
         <rect x="20" y="25" width="60" height="25" rx="1" />
@@ -2659,8 +2572,6 @@ const D = [
         <line x1="30" y1="85" x2="30" y2="100" />
         <line x1="70" y1="85" x2="70" y2="100" />
 
-        <!-- Label -->
-        <text x="40" y="20" fill="white" font-family="Arial" font-size="8" font-weight="bold" stroke="none"></text>
     </svg>`
   },
   {
@@ -2828,16 +2739,16 @@ class R {
     if (a) {
       const i = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       i.setAttribute("width", e.width), i.setAttribute("height", e.height), i.setAttribute("viewBox", "0 0 100 100"), i.classList.add("sld-node-symbol");
-      const r = a.svg.replace(/<svg[^>]*>/, "").replace(/<\/svg>/, "");
-      i.innerHTML = `<g transform="rotate(${e.rotation || 0} 50 50)">${r}</g>`, t.appendChild(i);
+      const n = a.svg.replace(/<svg[^>]*>/, "").replace(/<\/svg>/, "");
+      i.innerHTML = `<g transform="rotate(${e.rotation || 0} 50 50)">${n}</g>`, t.appendChild(i);
     }
     const s = this.liveData[e.id] || e.liveData || {};
     if (e.statusRequired !== !1) {
-      const i = document.createElementNS("http://www.w3.org/2000/svg", "circle"), r = Math.max(2, e.width * 0.05);
-      i.setAttribute("cx", e.width - r - e.width * 0.05), i.setAttribute("cy", r + e.height * 0.05), i.setAttribute("r", r);
+      const i = document.createElementNS("http://www.w3.org/2000/svg", "circle"), n = Math.max(2, e.width * 0.05);
+      i.setAttribute("cx", e.width - n - e.width * 0.05), i.setAttribute("cy", n + e.height * 0.05), i.setAttribute("r", n);
       const o = s.status || e.status || "white";
-      let n = o;
-      o === "alarm" || o.includes("red") ? (n = "#ef4444", i.classList.add("sld-blink")) : o === "stale" ? n = "#eab308" : o === "healthy" || o === "online" || o === "green" ? n = "#22c55e" : o === "white" && (n = "#ffffff"), i.setAttribute("fill", n), i.setAttribute("class", `sld-status-indicator ${i.classList.contains("sld-blink") ? "sld-blink" : ""}`), t.appendChild(i);
+      let r = o;
+      o === "alarm" || o.includes("red") ? (r = "#ef4444", i.classList.add("sld-blink")) : o === "stale" ? r = "#eab308" : o === "healthy" || o === "online" || o === "green" ? r = "#22c55e" : o === "white" && (r = "#ffffff"), i.setAttribute("fill", r), i.setAttribute("class", `sld-status-indicator ${i.classList.contains("sld-blink") ? "sld-blink" : ""}`), t.appendChild(i);
     }
     this.drawSlots(t, e, s), this.layerNodes.appendChild(t);
   }
@@ -2846,65 +2757,65 @@ class R {
    */
   sanitizeHTML(e) {
     const t = new DOMParser().parseFromString(e, "text/html"), a = ["B", "I", "U", "SPAN", "STRONG", "SMALL", "BR", "EM"], s = (i) => {
-      for (let r = i.childNodes.length - 1; r >= 0; r--) {
-        const o = i.childNodes[r];
+      for (let n = i.childNodes.length - 1; n >= 0; n--) {
+        const o = i.childNodes[n];
         if (o.nodeType === 1)
           if (a.includes(o.tagName)) {
-            for (let n = o.attributes.length - 1; n >= 0; n--) {
-              const l = o.attributes[n];
+            for (let r = o.attributes.length - 1; r >= 0; r--) {
+              const l = o.attributes[r];
               l.name !== "style" && o.removeAttribute(l.name);
             }
             s(o);
           } else {
-            const n = document.createTextNode(o.textContent);
-            i.replaceChild(n, o);
+            const r = document.createTextNode(o.textContent);
+            i.replaceChild(r, o);
           }
       }
     };
     return s(t.body), t.body.innerHTML;
   }
   drawSlots(e, t, a) {
-    const r = (l) => l === "name" || l === "label" ? t.name : l === "id" ? t.id : a[l] !== void 0 ? a[l] : `[${l}]`, o = (l, h, c, x, p, w, k) => {
+    const n = (l) => l === "name" || l === "label" ? t.name : l === "id" ? t.id : a[l] !== void 0 ? a[l] : `[${l}]`, o = (l, h, y, d, p, w, k) => {
       if (!h || h.length === 0) return;
       const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
       g.setAttribute("class", `sld-side-group sld-side-${l}`);
-      const y = (h.length - 1) * w * 16, u = (h.length - 1) * k * 16, d = c - y / 2, S = x - u / 2, v = t.slotRotation && t.slotRotation[l] || 0;
-      v !== 0 && g.setAttribute("transform", `rotate(${v}, ${c}, ${x})`), h.forEach((f, M) => {
-        const C = r(f), b = !this.options.hideSlotKeys && f !== "label" && f !== "name" ? `${f.toUpperCase()}: ${C}` : `${C}`, T = this.sanitizeHTML(b), m = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject"), P = d + w * M * 16, A = S + k * M * 16, L = 300, B = 24;
-        m.setAttribute("width", L), m.setAttribute("height", B);
-        const I = P - L / 2, E = A - B / 2 + 1;
+      const c = (h.length - 1) * w * 16, u = (h.length - 1) * k * 16, x = y - c / 2, S = d - u / 2, L = t.slotRotation && t.slotRotation[l] || 0;
+      L !== 0 && g.setAttribute("transform", `rotate(${L}, ${y}, ${d})`), h.forEach((f, M) => {
+        const C = n(f), b = !this.options.hideSlotKeys && f !== "label" && f !== "name" ? `${f.toUpperCase()}: ${C}` : `${C}`, T = this.sanitizeHTML(b), m = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject"), P = x + w * M * 16, A = S + k * M * 16, v = 300, B = 24;
+        m.setAttribute("width", v), m.setAttribute("height", B);
+        const I = P - v / 2, E = A - B / 2 + 1;
         m.setAttribute("x", I), m.setAttribute("y", E), m.setAttribute("class", "sld-slot-fo"), m.innerHTML = `
-                    <div xmlns="http://www.w3.org/1999/xhtml" class="sld-slot-wrapper" style="width: ${L}px; display: flex; justify-content: center; align-items: center;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" class="sld-slot-wrapper" style="width: ${v}px; display: flex; justify-content: center; align-items: center;">
                         <div class="sld-slot-html">
                             ${T}
                         </div>
                     </div>
                 `, g.appendChild(m);
       }), e.appendChild(g);
-    }, n = t.slots || { top: [], right: [], bottom: [], left: [] };
-    o("top", n.top, t.width / 2, -10 - 16 / 2, "middle", 0, -1), o("bottom", n.bottom, t.width / 2, t.height + 10 + 16 / 2, "middle", 0, 1), o("right", n.right, t.width + 10 + 15, t.height / 2, "middle", 0, 1), o("left", n.left, -25, t.height / 2, "middle", 0, 1);
+    }, r = t.slots || { top: [], right: [], bottom: [], left: [] };
+    o("top", r.top, t.width / 2, -10 - 16 / 2, "middle", 0, -1), o("bottom", r.bottom, t.width / 2, t.height + 10 + 16 / 2, "middle", 0, 1), o("right", r.right, t.width + 10 + 15, t.height / 2, "middle", 0, 1), o("left", r.left, -25, t.height / 2, "middle", 0, 1);
   }
   drawConnection(e) {
-    const t = this.state.nodes.find((y) => y.id === e.from), a = this.state.nodes.find((y) => y.id === e.to);
+    const t = this.state.nodes.find((c) => c.id === e.from), a = this.state.nodes.find((c) => c.id === e.to);
     if (!t || !a) return;
-    const s = t.x + t.width / 2, i = t.y + t.height / 2, r = a.x + a.width / 2, o = a.y + a.height / 2, n = t.width / 2, l = t.height / 2;
-    let h = s, c = i, x = r, p = o, w = "";
+    const s = t.x + t.width / 2, i = t.y + t.height / 2, n = a.x + a.width / 2, o = a.y + a.height / 2, r = t.width / 2, l = t.height / 2;
+    let h = s, y = i, d = n, p = o, w = "";
     const k = document.createElementNS("http://www.w3.org/2000/svg", "path");
     if (k.setAttribute("class", "sld-connection-line"), e.type === "custom") {
-      const y = e.waypoints && e.waypoints[0] || { x: r, y: o }, u = e.waypoints && e.waypoints[e.waypoints.length - 1] || { x: s, y: i };
-      Math.abs(y.x - s) > Math.abs(y.y - i) ? h = s + (y.x > s ? n : -n) : c = i + (y.y > i ? l : -l), Math.abs(r - u.x) > Math.abs(o - u.y) ? x = r + (r > u.x ? -n : n) : p = o + (o > u.y ? -l : l), w = `M ${h} ${c} `, e.waypoints && e.waypoints.forEach((d) => {
-        w += `L ${d.x} ${d.y} `;
-      }), w += `L ${x} ${p}`;
+      const c = e.waypoints && e.waypoints[0] || { x: n, y: o }, u = e.waypoints && e.waypoints[e.waypoints.length - 1] || { x: s, y: i };
+      Math.abs(c.x - s) > Math.abs(c.y - i) ? h = s + (c.x > s ? r : -r) : y = i + (c.y > i ? l : -l), Math.abs(n - u.x) > Math.abs(o - u.y) ? d = n + (n > u.x ? -r : r) : p = o + (o > u.y ? -l : l), w = `M ${h} ${y} `, e.waypoints && e.waypoints.forEach((x) => {
+        w += `L ${x.x} ${x.y} `;
+      }), w += `L ${d} ${p}`;
     } else {
-      const y = Math.abs(r - s), u = Math.abs(o - i);
-      if (y > u) {
-        h = s + (r > s ? n : -n), x = r + (r > s ? -n : n);
-        const d = h + (x - h) / 2;
-        w = `M ${h} ${c} L ${d} ${c} L ${d} ${p} L ${x} ${p}`;
+      const c = Math.abs(n - s), u = Math.abs(o - i);
+      if (c > u) {
+        h = s + (n > s ? r : -r), d = n + (n > s ? -r : r);
+        const x = h + (d - h) / 2;
+        w = `M ${h} ${y} L ${x} ${y} L ${x} ${p} L ${d} ${p}`;
       } else {
-        c = i + (o > i ? l : -l), p = o + (o > i ? -l : l);
-        const d = c + (p - c) / 2;
-        w = `M ${h} ${c} L ${h} ${d} L ${x} ${d} L ${x} ${p}`;
+        y = i + (o > i ? l : -l), p = o + (o > i ? -l : l);
+        const x = y + (p - y) / 2;
+        w = `M ${h} ${y} L ${h} ${x} L ${d} ${x} L ${d} ${p}`;
       }
     }
     k.setAttribute("d", w);

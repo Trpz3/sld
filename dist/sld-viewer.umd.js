@@ -1,22 +1,8 @@
-(function (f, L) { typeof exports == "object" && typeof module < "u" ? module.exports = L() : typeof define == "function" && define.amd ? define(L) : (f = typeof globalThis < "u" ? globalThis : f || self, f.SLDViewer = L()) })(this, (function () {
-    "use strict"; const f = [{
-        id: "main_grid_utility", name: "Main Grid Utility", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+(function(f,L){typeof exports=="object"&&typeof module<"u"?module.exports=L():typeof define=="function"&&define.amd?define(L):(f=typeof globalThis<"u"?globalThis:f||self,f.SLDViewer=L())})(this,(function(){"use strict";const f=[{id:"main_grid_utility",name:"Main Grid Utility",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-        <!-- Main Grid Utility Symbol: A Circle with an Inner Zig-Zag or Sinusoidal Wave -->
-
         <!-- Outer Circle -->
 
-        <circle cx="50" cy="50" r="40" />
-
-        <!-- Horizontal Connection Line (Left) -->
-
-        <line x1="0" y1="50" x2="10" y2="50" />
-
-        <!-- Horizontal Connection Line (Right) -->
-
-        <line x1="90" y1="50" x2="100" y2="50" />
-
+        <circle cx="50" cy="50" r="48" />
         <!-- AC Sine Wave Representation in the middle -->
 
         <path d="M 25 50 C 35 30, 40 30, 50 50 C 60 70, 65 70, 75 50" />
@@ -25,133 +11,80 @@
 
         <line x1="50" y1="10" x2="50" y2="25" />
         <line x1="50" y1="75" x2="50" y2="90" />
-    </svg>`}, {
-        id: "transformer", name: "Transformer (TR)", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"transformer",name:"Transformer (TR)",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Standard Two-Winding Transformer Symbol (Two Overlapping Circles) -->
 
         <!-- Primary Winding (Left/Top Circle) -->
 
-        <circle cx="40" cy="50" r="25" />
+        <circle cx="35" cy="50" r="30" />
 
         <!-- Secondary Winding (Right/Bottom Circle) -->
 
-        <circle cx="60" cy="50" r="25" />
-
-        <!-- Connection Line (Left/Input) -->
-
-        <line x1="0" y1="50" x2="15" y2="50" />
-
-        <!-- Connection Line (Right/Output) -->
-
-        <line x1="85" y1="50" x2="100" y2="50" />
-
-        <!-- Optional labels or phase indicators could be added here -->
-
-    </svg>`}, {
-        id: "dg", name: "DG", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+        <circle cx="65" cy="50" r="30" />
+    </svg>`},{id:"dg",name:"DG",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Circle for the Generator -->
 
-        <circle cx="50" cy="50" r="40" />
+        <circle cx="50" cy="50" r="48" />
 
         <!-- "G" Lettering to denote Generator -->
 
         <path d="M 62 40 C 60 32, 40 32, 38 50 C 40 68, 60 68, 62 60 L 50 60" />
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="10" />
-
-        <!-- Prime Mover indicator (Zig-zag line outside or specific marking) -->
-
-        <!-- Here we add a small shaft indicator at the bottom -->
-
-        <line x1="45" y1="90" x2="55" y2="90" />
-        <line x1="50" y1="90" x2="50" y2="100" />
-    </svg>`}, {
-        id: "incoming_breaker", name: "Incoming Breaker (VCB / ACB)", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"incoming_breaker",name:"Incoming Breaker (VCB / ACB)",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Box for the Breaker -->
 
-        <rect x="30" y="30" width="40" height="40" />
+        <rect x="1" y="1" width="98" height="98" />
 
         <!-- "X" inside the box to signify a Circuit Breaker (VCB/ACB) -->
 
-        <line x1="30" y1="30" x2="70" y2="70" />
-        <line x1="70" y1="30" x2="30" y2="70" />
-
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="30" />
-
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="70" x2="50" y2="100" />
-    </svg>`}, {
-        id: "vcb", name: "VCB", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+        <line x1="10" y1="10" x2="90" y2="90" />
+        <line x1="90" y1="10" x2="10" y2="90" />
+    </svg>`},{id:"vcb",name:"VCB",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="30" />
 
         <!-- VCB Symbol: Box with 'X' and vertical bar or standard rectangle with crossing lines -->
 
-        <rect x="30" y="30" width="40" height="40" />
-        <line x1="30" y1="30" x2="70" y2="70" />
-        <line x1="70" y1="30" x2="30" y2="70" />
+        <rect x="1" y="1" width="98" height="98" />
+        <line x1="10" y1="10" x2="90" y2="90" />
+        <line x1="90" y1="10" x2="10" y2="90" />
 
         <!-- Horizontal internal separation often used for VCB -->
 
-        <line x1="30" y1="50" x2="70" y2="50" />
+        <line x1="10" y1="50" x2="90" y2="50" />
 
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="70" x2="50" y2="100" />
-    </svg>`}, {
-        id: "acb", name: "ACB", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="30" />
+    </svg>`},{id:"acb",name:"ACB",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
 
         <!-- ACB Symbol: Box with horizontal line and contact indicators -->
 
-        <rect x="30" y="30" width="40" height="40" />
+        <rect x="1" y="1" width="98" height="98" />
 
         <!-- Horizontal central line -->
 
-        <line x1="30" y1="50" x2="70" y2="50" />
+        <line x1="10" y1="50" x2="90" y2="50" />
 
         <!-- Vertical contact indicator (differentiating ACB) -->
 
-        <line x1="50" y1="30" x2="50" y2="70" />
+        <line x1="50" y1="10" x2="50" y2="90" />
 
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="70" x2="50" y2="100" />
-    </svg>`}, {
-        id: "mccb", name: "MCCB", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"mccb",name:"MCCB",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="35" />
 
         <!-- MCCB Symbol: Smaller rectangular housing with 'X' -->
 
-        <rect x="35" y="35" width="30" height="30" />
-        <line x1="35" y1="35" x2="65" y2="65" />
-        <line x1="65" y1="35" x2="35" y2="65" />
+        <rect x="1" y="1" width="98" height="98" />
+        <line x1="10" y1="10" x2="90" y2="90" />
+        <line x1="90" y1="10" x2="10" y2="90" />
 
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="65" x2="50" y2="100" />
-    </svg>`}, {
-        id: "isolator_disconnect_switch", name: "Isolator / Disconnect Switch", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"isolator_disconnect_switch",name:"Isolator / Disconnect Switch",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Connection Point (Top) -->
@@ -173,27 +106,18 @@
         <!-- Connection Point (Bottom) -->
 
         <line x1="50" y1="65" x2="50" y2="100" />
-    </svg>`}, {
-        id: "relay", name: "Relay", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"relay",name:"Relay",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Square for the Relay Housing -->
 
-        <rect x="25" y="25" width="50" height="50" />
+        <rect x="1" y="1" width="98" height="98" />
 
         <!-- "R" Lettering to denote Relay -->
 
         <path d="M 42 40 L 52 40 C 56 40, 58 42, 58 45 C 58 48, 56 50, 52 50 L 42 50 L 42 60 M 50 50 L 58 60" />
 
-        <!-- Connection Point (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="25" />
-
-        <!-- Connection Point (Bottom) -->
-
-        <line x1="50" y1="75" x2="50" y2="100" />
-    </svg>`}, {
-        id: "busbar", name: "Busbar", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"busbar",name:"Busbar",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Horizontal Busbar Line (Thicker stroke for emphasis) -->
@@ -207,8 +131,7 @@
         <!-- Representative feeder connection (Bottom) -->
 
         <line x1="75" y1="50" x2="75" y2="70" stroke-width="2" />
-    </svg>`}, {
-        id: "bus_coupler", name: "Bus Coupler", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"bus_coupler",name:"Bus Coupler",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Left Busbar Section -->
@@ -229,8 +152,7 @@
 
         <line x1="35" y1="50" x2="35" y2="50" />
         <line x1="65" y1="50" x2="65" y2="50" />
-    </svg>`}, {
-        id: "bus_duct_bus_trunking_outer", name: "Bus Duct / Bus Trunking Outer ", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"bus_duct_bus_trunking_outer",name:"Bus Duct / Bus Trunking Outer ",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Bus Duct / Bus Trunking Outer Enclosure -->
@@ -248,8 +170,7 @@
         <line x1="50" y1="40" x2="60" y2="60" opacity="0.6" />
         <line x1="70" y1="40" x2="80" y2="60" opacity="0.6" />
         <line x1="90" y1="40" x2="100" y2="60" opacity="0.6" />
-    </svg>`}, {
-        id: "main_lt_panel", name: "Main LT Panel", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"main_lt_panel",name:"Main LT Panel",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Panel Enclosure -->
@@ -279,8 +200,7 @@
         <!-- Label Placeholder Area -->
 
         <rect x="35" y="15" width="30" height="10" stroke-width="1" stroke-dasharray="2,2" />
-    </svg>`}, {
-        id: "ldb_mldb", name: "LDB / MLDB", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"ldb_mldb",name:"LDB / MLDB",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- LDB / MLDB Enclosure -->
@@ -310,8 +230,7 @@
         <!-- Identification Label (Symbolic 'L' for Lighting) -->
 
         <path d="M 47 80 L 47 85 L 53 85" stroke-width="1.5" />
-    </svg>`}, {
-        id: "apfc_panel", name: "APFC Panel", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"apfc_panel",name:"APFC Panel",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- APFC Panel Enclosure -->
@@ -342,8 +261,7 @@
         <!-- Main Incoming Feed (Top) -->
 
         <line x1="50" y1="0" x2="50" y2="15" />
-    </svg>`}, {
-        id: "capacitor_bank", name: "Capacitor Bank", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"capacitor_bank",name:"Capacitor Bank",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Connection Point (Top) -->
@@ -366,8 +284,7 @@
 
         <path d="M 30 45 L 20 45 L 20 55 L 30 55" opacity="0.5" />
         <path d="M 70 45 L 80 45 L 80 55 L 70 55" opacity="0.5" />
-    </svg>`}, {
-        id: "ups", name: "UPS", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"ups",name:"UPS",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Main UPS Block Enclosure -->
 
@@ -393,8 +310,7 @@
         <!-- Connection Point (Bottom / Output) -->
 
         <line x1="50" y1="80" x2="50" y2="100" />
-    </svg>`}, {
-        id: "battery_bank", name: "Battery Bank", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"battery_bank",name:"Battery Bank",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Connection Point (Top) -->
@@ -421,8 +337,7 @@
         <!-- Connection Point (Bottom) -->
 
         <line x1="50" y1="80" x2="50" y2="100" />
-    </svg>`}, {
-        id: "bypass_line", name: "Bypass line", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"bypass_line",name:"Bypass line",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Bypass line  -->
@@ -436,8 +351,7 @@
         <rect x="35" y="35" width="30" height="30" stroke-dasharray="2,2" opacity="0.5" />
         <line x1="50" y1="20" x2="50" y2="35" />
         <line x1="50" y1="65" x2="50" y2="80" />
-    </svg>`}, {
-        id: "motor", name: "Motor", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"motor",name:"Motor",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Circle for the Motor -->
@@ -451,8 +365,7 @@
         <!-- Connection Point (Top) -->
 
         <line x1="50" y1="0" x2="50" y2="10" />
-    </svg>`}, {
-        id: "pump", name: "Pump", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"pump",name:"Pump",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Circle for the Pump Casing -->
@@ -470,8 +383,7 @@
         <!-- Discharge Indicator (Triangle at the bottom) -->
 
         <path d="M 45 90 L 55 90 L 50 100 Z" fill="white" />
-    </svg>`}, {
-        id: "Compressor", name: "Compressor", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"Compressor",name:"Compressor",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Circle for the Compressor Casing -->
@@ -489,8 +401,7 @@
         <!-- Discharge Indicator (Triangle at the bottom) -->
 
         <path d="M 45 90 L 55 90 L 50 100 Z" fill="white" />
-    </svg>`}, {
-        id: "fan", name: "Fan", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"fan",name:"Fan",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Circle for the Fan Casing -->
@@ -509,8 +420,7 @@
         <!-- Airflow Direction Indicator (Triangle at the bottom) -->
 
         <path d="M 45 90 L 55 90 L 50 100 Z" fill="white" />
-    </svg>`}, {
-        id: "energy_meter", name: "Energy Meter", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"energy_meter",name:"Energy Meter",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Meter Enclosure -->
@@ -540,8 +450,7 @@
         <!-- Connection Point (Bottom) -->
 
         <line x1="50" y1="75" x2="50" y2="100" />
-    </svg>`}, {
-        id: "ct", name: "Current Transformer", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"ct",name:"Current Transformer",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Primary Conductor (Main Line) -->
@@ -565,8 +474,7 @@
 
         <path d="M 30 45 C 25 45, 20 48, 20 52 C 20 56, 25 59, 30 59" stroke-width="1" /> <!-- C -->
         <path d="M 35 45 L 45 45 M 40 45 L 40 59" stroke-width="1" /> <!-- T -->
-    </svg>`}, {
-        id: "pt", name: "Potential Transformer", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"pt",name:"Potential Transformer",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Primary Conductor (Main Line) -->
@@ -593,8 +501,7 @@
 
         <path d="M 70 45 L 78 45 C 82 45, 82 52, 78 52 L 70 52 L 70 59" stroke-width="1" /> <!-- P -->
         <path d="M 82 45 L 92 45 M 87 45 L 87 59" stroke-width="1" /> <!-- T -->
-    </svg>`}, {
-        id: "earthing", name: "Earthing", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"earthing",name:"Earthing",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Connection Lead (Vertical) -->
@@ -612,8 +519,7 @@
         <!-- Tertiary Horizontal Bar (Shortest) -->
 
         <line x1="45" y1="80" x2="55" y2="80" />
-    </svg>`}, {
-        id: "lightning_arrester", name: "Lightning arrester", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"lightning_arrester",name:"Lightning arrester",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Connection Lead from Line (Top) -->
@@ -638,8 +544,7 @@
         <line x1="40" y1="85" x2="60" y2="85" />
         <!-- Tertiary Horizontal Bar -->
         <line x1="47" y1="95" x2="53" y2="95" />
-    </svg>`}, {
-        id: "incoming_supply_line_top", name: "Incoming Supply Line (Top)", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"incoming_supply_line_top",name:"Incoming Supply Line (Top)",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Incoming Supply Line (Top) -->
@@ -663,8 +568,7 @@
         <!-- Busbar Section (Horizontal at bottom) -->
 
         <line x1="10" y1="85" x2="90" y2="85" stroke-width="4" />
-    </svg>`}, {
-        id: "changeover_switch", name: "ChangeOver Switch", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"changeover_switch",name:"ChangeOver Switch",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Incoming Supply 1 (Top Left) -->
@@ -689,8 +593,7 @@
         <!-- Mechanical Interlock / Toggle Indicator -->
 
         <path d="M 35 45 Q 50 55 65 45" stroke-dasharray="2,2" opacity="0.6" />
-    </svg>`}, {
-        id: "mldb", name: "Main Lighting DB", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"mldb",name:"Main Lighting DB",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Panel Enclosure -->
@@ -721,8 +624,7 @@
         <!-- Main Incoming Feed (Top) -->
 
         <line x1="50" y1="0" x2="50" y2="10" />
-    </svg>`}, {
-        id: "ldb", name: "lighting DB", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"ldb",name:"lighting DB",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Panel Enclosure (Slightly smaller than MLDB) -->
@@ -750,8 +652,7 @@
         <!-- Main Incoming Feed (Top) -->
 
         <line x1="50" y1="0" x2="50" y2="15" />
-    </svg>`}, {
-        id: "pdb", name: "Power DB", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"pdb",name:"Power DB",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Panel Enclosure -->
@@ -781,8 +682,7 @@
         <!-- Main Incoming Feed (Top) -->
 
         <line x1="50" y1="0" x2="50" y2="15" />
-    </svg>`}, {
-        id: "mcc_panel", name: "MCC Panel", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"mcc_panel",name:"MCC Panel",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Panel Enclosure -->
@@ -810,8 +710,7 @@
         <!-- Main Incoming Feed (Top) -->
 
         <line x1="50" y1="0" x2="50" y2="15" />
-    </svg>`}, {
-        id: "apfc_panel", name: "APFC Panel", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"apfc_panel",name:"APFC Panel",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Panel Enclosure -->
@@ -844,8 +743,7 @@
         <!-- Main Incoming Feed (Top) -->
 
         <line x1="50" y1="0" x2="50" y2="15" />
-    </svg>`}, {
-        id: "starter_panel", name: "Starter Panel", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"starter_panel",name:"Starter Panel",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Panel Enclosure -->
@@ -878,8 +776,7 @@
         <!-- Main Incoming Feed (Top) -->
 
         <line x1="50" y1="0" x2="50" y2="15" />
-    </svg>`}, {
-        id: "battery", name: "Battery", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"battery",name:"Battery",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main UPS Block Enclosure -->
@@ -906,8 +803,7 @@
         <!-- Connection Point (Bottom / Output) -->
 
         <line x1="50" y1="80" x2="50" y2="100" />
-    </svg>`}, { id: "battery_bypass", name: "Battery Bypass", svg: '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">   <circle cx="50" cy="15" r="2" fill="white" /><circle cx="50" cy="85" r="2" fill="white" /><line x1="50" y1="75" x2="50" y2="100" /></svg><line x1="30" y1="65" x2="45" y2="65" stroke-dasharray="2,1" /> <path d="M 50 15 L 85 15 L 85 85 L 50 85" stroke-dasharray="4,4" /><rect x="25" y="25" width="50" height="50" /><line x1="30" y1="60" x2="45" y2="60" /><line x1="50" y1="0" x2="50" y2="25" /><line x1="25" y1="75" x2="75" y2="25" fill="transparent" class="transparent" /> <path d="M 55 35 C 60 27, 65 27, 70 35" />  ' }, {
-        id: "generic_load", name: "Generic Load", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"battery_bypass",name:"Battery Bypass",svg:'<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">   <circle cx="50" cy="15" r="2" fill="white" /><circle cx="50" cy="85" r="2" fill="white" /><line x1="50" y1="75" x2="50" y2="100" /></svg><line x1="30" y1="65" x2="45" y2="65" stroke-dasharray="2,1" /> <path d="M 50 15 L 85 15 L 85 85 L 50 85" stroke-dasharray="4,4" /><rect x="25" y="25" width="50" height="50" /><line x1="30" y1="60" x2="45" y2="60" /><line x1="50" y1="0" x2="50" y2="25" /><line x1="25" y1="75" x2="75" y2="25" fill="transparent" class="transparent" /> <path d="M 55 35 C 60 27, 65 27, 70 35" />  '},{id:"generic_load",name:"Generic Load",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Connection Lead (Top) -->
@@ -926,8 +822,7 @@
         <!-- "L" Label for Load (Optional) -->
 
         <path d="M 47 50 L 47 60 L 53 60" stroke-width="1" opacity="0.8" />
-    </svg>`}, {
-        id: "chiller", name: "Chiller", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"chiller",name:"Chiller",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Connection Lead (Top) -->
@@ -963,8 +858,7 @@
         <!-- "CH" Label -->
 
         <text x="34" y="80" fill="white" font-family="Arial" font-size="8" stroke="none">CHILLER</text>
-    </svg>`}, {
-        id: "cooling_tower", name: "Cooling Tower", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"cooling_tower",name:"Cooling Tower",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Connection Lead (Top) -->
@@ -998,8 +892,7 @@
         <!-- Label -->
 
         <text x="16" y="90" fill="white" font-family="Arial" font-size="8" stroke="none" outline="black"></text>
-    </svg>`}, {
-        id: "air_dryer", name: "Air Dryer", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"air_dryer",name:"Air Dryer",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Connection Lead (Top) -->
@@ -1027,8 +920,7 @@
         <!-- Label -->
 
         <text x="32" y="12" fill="white" font-family="Arial" font-size="8" stroke="none"></text>
-    </svg>`}, {
-        id: "mfm", name: "MFM", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"mfm",name:"MFM",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Connection Lead (Top) -->
@@ -1062,8 +954,7 @@
         <!-- Label -->
 
         <text x="38" y="18" fill="white" font-family="Arial" font-size="8" stroke="none"></text>
-    </svg>`}, {
-        id: "terminal", name: "Terminal", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"terminal",name:"Terminal",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Incoming Connection Lead -->
@@ -1088,8 +979,7 @@
         <!-- Label -->
 
         <text x="35" y="30" fill="white" font-family="Arial" font-size="8" stroke="none"></text>
-    </svg>`}, {
-        id: "junction", name: "Junction", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"junction",name:"Junction",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Main Connection Leads (Four-way Junction) -->
@@ -1110,13 +1000,9 @@
         <!-- Label -->
 
         <text x="30" y="25" fill="white" font-family="Arial" font-size="8" stroke="none"></text>
-    </svg>`}, {
-        id: "imm", name: "Injection Moulding", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"imm",name:"Injection Moulding",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Electrical Connection Lead (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="20" />
 
         <!-- Injection Unit (Right side) -->
 
@@ -1141,16 +1027,10 @@
         <line x1="80" y1="80" x2="80" y2="90" />
         <line x1="10" y1="90" x2="95" y2="90" />
 
-        <!-- Label -->
 
-        <text x="35" y="25" fill="white" font-family="Arial" font-size="8" stroke="none">IMM</text>
-    </svg>`}, {
-        id: "extrusion", name: "Extrusion", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"extrusion",name:"Extrusion",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
-        <!-- Electrical Connection Lead (Top) -->
-
-        <line x1="50" y1="0" x2="50" y2="20" />
 
         <!-- Extruder Barrel (Main Body) -->
 
@@ -1181,11 +1061,7 @@
         <line x1="80" y1="80" x2="80" y2="90" />
         <line x1="10" y1="90" x2="95" y2="90" />
 
-        <!-- Label -->
-
-        <text x="35" y="25" fill="white" font-family="Arial" font-size="8" stroke="none">EXTRUSION</text>
-    </svg>`}, {
-        id: "blow_moulding", name: "Blow Moulding", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"blow_moulding",name:"Blow Moulding",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Electrical Connection Lead (Top) -->
@@ -1222,8 +1098,7 @@
         <!-- Label -->
 
         <text x="30" y="12" fill="white" font-family="Arial" font-size="8" stroke="none">BLOW MOLDING</text>
-    </svg>`}, {
-        id: "press_machine", name: "Press Machine", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"press_machine",name:"Press Machine",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Electrical Connection Lead (Top) -->
@@ -1262,8 +1137,7 @@
         <!-- Label -->
 
         <text x="35" y="12" fill="white" font-family="Arial" font-size="8" stroke="none">PRESS MACHINE</text>
-    </svg>`}, {
-        id: "assembly_machine", name: "Assembly Machine", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"assembly_machine",name:"Assembly Machine",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Electrical Connection Lead (Top) -->
@@ -1303,8 +1177,7 @@
         <!-- Label -->
 
         <text x="32" y="12" fill="white" font-family="Arial" font-size="8" stroke="none">ASSEMBLY M/C</text>
-    </svg>`}, {
-        id: "robo", name: "ROBO", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"robo",name:"ROBO",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Electrical Connection Lead (Top) -->
@@ -1347,8 +1220,7 @@
         <!-- Label -->
 
         <text x="28" y="12" fill="white" font-family="Arial" font-size="8" stroke="none">AUX ROBO</text>
-    </svg>`}, {
-        id: "mtc", name: "MTC", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"mtc",name:"MTC",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Electrical Connection Lead (Top) -->
@@ -1389,8 +1261,7 @@
         <!-- Label -->
 
         <text x="30" y="12" fill="white" font-family="Arial" font-size="8" stroke="none">AUX MTC</text>
-    </svg>`}, {
-        id: "tds", name: "TDS", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"tds",name:"TDS",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Electrical Connection Lead (Top) -->
@@ -1428,8 +1299,7 @@
         <!-- Label -->
 
         <text x="32" y="12" fill="white" font-family="Arial" font-size="8" stroke="none">AUX TDS</text>
-    </svg>`}, {
-        id: "temp_flor_meter", name: "Temp/Flow meter", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"temp_flor_meter",name:"Temp/Flow meter",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Electrical Connection Lead (Top) -->
@@ -1472,8 +1342,7 @@
         <!-- Label -->
 
         <text x="28" y="12" fill="white" font-family="Arial" font-size="7" stroke="none">AUX TEMP/FLOW</text>
-    </svg>`}, {
-        id: "hopper", name: "Hopper", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"hopper",name:"Hopper",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Electrical Connection Lead (Top) -->
@@ -1512,8 +1381,7 @@
         <!-- Label -->
 
         <text x="28" y="15" fill="white" font-family="Arial" font-size="8" stroke="none">HOPPER</text>
-    </svg>`}, {
-        id: "silo", name: "Silo", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"silo",name:"Silo",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
         <!-- Electrical Connection Lead (Top) -->
@@ -1562,8 +1430,7 @@
         <!-- Label -->
 
         <text x="32" y="35" fill="white" font-family="Arial" font-size="8" stroke="none">SILO</text>
-    </svg>`}, {
-        id: "cutter", name: "Cutter", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"cutter",name:"Cutter",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -1594,8 +1461,7 @@
 
         <!-- Label -->
         <text x="38" y="10" fill="white" font-family="Arial" font-size="7" stroke="none">CUTTER</text>
-    </svg>`}, {
-        id: "grinder", name: "Grinder", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"grinder",name:"Grinder",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -1635,8 +1501,7 @@
 
         <!-- Label -->
         <text x="38" y="10" fill="white" font-family="Arial" font-size="7" stroke="none">GRINDER</text>
-    </svg>`}, {
-        id: "socketing_machine", name: "Socketing Machine", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"socketing_machine",name:"Socketing Machine",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -1672,8 +1537,7 @@
 
         <!-- Label -->
         <text x="25" y="12" fill="white" font-family="Arial" font-size="7" stroke="none">SOCKETING M/C</text>
-    </svg>`}, {
-        id: "mixer", name: "Mixer", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"mixer",name:"Mixer",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="10" />
@@ -1707,8 +1571,7 @@
 
         <!-- Label -->
         <text x="40" y="8" fill="white" font-family="Arial" font-size="7" stroke="none">MIXER</text>
-    </svg>`}, {
-        id: "roto_moulding", name: "ROTO Moulding", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"roto_moulding",name:"ROTO Moulding",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="10" />
@@ -1745,8 +1608,7 @@
 
         <!-- Label -->
         <text x="28" y="18" fill="white" font-family="Arial" font-size="7" stroke="none">ROTO-MOULDING</text>
-    </svg>`}, {
-        id: "it_server", name: "IT Server", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"it_server",name:"IT Server",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -1787,8 +1649,7 @@
 
         <!-- Label -->
         <text x="35" y="10" fill="white" font-family="Arial" font-size="7" stroke="none">IT-SERVER</text>
-    </svg>`}, {
-        id: "air_compressor", name: "Air Compressor", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"air_compressor",name:"Air Compressor",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -1821,8 +1682,7 @@
 
         <!-- Label -->
         <text x="30" y="10" fill="white" font-family="Arial" font-size="7" stroke="none">AIR-COMPRESSOR</text>
-    </svg>`}, {
-        id: "vapourizer", name: "Vapourizer", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"vapourizer",name:"Vapourizer",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -1855,8 +1715,7 @@
 
         <!-- Label -->
         <text x="32" y="10" fill="white" font-family="Arial" font-size="7" stroke="none">VAPOURIZER</text>
-    </svg>`}, {
-        id: "pulverizer", name: "Pulverizer", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"pulverizer",name:"Pulverizer",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -1894,8 +1753,7 @@
 
         <!-- Label -->
         <text x="32" y="10" fill="white" font-family="Arial" font-size="7" stroke="none">PULVERIZER</text>
-    </svg>`}, {
-        id: "refrigeration", name: "Refrigeration", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"refrigeration",name:"Refrigeration",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -1931,8 +1789,7 @@
 
         <!-- Label -->
         <text x="28" y="12" fill="white" font-family="Arial" font-size="7" stroke="none">REFRIGERATION</text>
-    </svg>`}, {
-        id: "plate", name: "PLATEHX", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"plate",name:"PLATEHX",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -1979,8 +1836,7 @@
 
         <!-- Label -->
         <text x="32" y="12" fill="white" font-family="Arial" font-size="7" stroke="none">PLATE HX</text>
-    </svg>`}, {
-        id: "conveyor", name: "Conveyor", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"conveyor",name:"Conveyor",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="20" />
@@ -2013,8 +1869,7 @@
 
         <!-- Label -->
         <text x="35" y="15" fill="white" font-family="Arial" font-size="7" stroke="none">CONVEYOR</text>
-    </svg>`}, {
-        id: "pelletizer", name: "Pelletizer", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"pelletizer",name:"Pelletizer",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -2056,8 +1911,7 @@
 
         <!-- Label -->
         <text x="32" y="12" fill="white" font-family="Arial" font-size="7" stroke="none">PELLETIZER</text>
-    </svg>`}, {
-        id: "compressor", name: "Compressor", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"compressor",name:"Compressor",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -2090,8 +1944,7 @@
 
         <!-- Label -->
         <text x="28" y="12" fill="white" font-family="Arial" font-size="7" stroke="none">COMPRESSOR</text>
-    </svg>`}, {
-        id: "spare", name: "Spare", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"spare",name:"Spare",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) - Shows the slot is wired but empty -->
         <line x1="50" y1="0" x2="50" y2="25" />
@@ -2110,8 +1963,7 @@
 
         <!-- Label -->
         <text x="35" y="53" fill="white" font-family="Arial" font-size="9" font-weight="bold" stroke="none">SPARE</text>
-    </svg>`}, {
-        id: "ct_fan", name: "CT Fan", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"ct_fan",name:"CT Fan",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="15" />
@@ -2145,8 +1997,7 @@
         <!-- Label -->
         <text x="35" y="55" fill="white" font-family="Arial" font-size="8" font-weight="bold" stroke="none">CT
             FAN</text>
-    </svg>`}, {
-        id: "amf", name: "AMF", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"amf",name:"AMF",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Main Panel Enclosure -->
         <rect x="20" y="15" width="60" height="75" rx="2" />
@@ -2181,11 +2032,8 @@
         <!-- Label -->
         <text x="32" y="30" fill="white" font-family="Arial" font-size="8" font-weight="bold" stroke="none">AMF
             PANEL</text>
-    </svg>`}, {
-        id: "room", name: "Room", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"room",name:"Room",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Electrical Connection Lead (Top) -->
-        <line x1="50" y1="0" x2="50" y2="20" />
 
         <!-- Room Boundary / Walls -->
         <!-- Top Wall -->
@@ -2211,12 +2059,8 @@
 
         <!-- Label -->
         <text x="38" y="52" fill="white" font-family="Arial" font-size="10" font-weight="bold" stroke="none"></text>
-    </svg>`}, {
-        id: "area", name: "Area", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"area",name:"Area",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Electrical Connection Lead (Top) -->
-        <line x1="50" y1="0" x2="50" y2="10" />
-
         <!-- Area Boundary (Large Hexagonal/Octagonal Zone) -->
         <path d="M 30 15 L 70 15 L 90 35 L 90 75 L 70 95 L 30 95 L 10 75 L 10 35 Z" stroke-dasharray="4,2"
             opacity="0.8" />
@@ -2230,12 +2074,8 @@
         <path d="M 75 25 L 85 25 L 85 35" stroke-width="1" />
         <path d="M 15 75 L 15 85 L 25 85" stroke-width="1" />
         <path d="M 75 85 L 85 85 L 85 75" stroke-width="1" />
- </svg>`}, {
-        id: "shopfloor", name: "Shop Floor", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+ </svg>`},{id:"shopfloor",name:"Shop Floor",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Electrical Connection Lead (Top) -->
-        <line x1="50" y1="0" x2="50" y2="10" />
-
         <!-- Shop Floor Boundary (Industrial Roof Profile) -->
         <path d="M 10 35 L 10 90 L 90 90 L 90 35 L 70 20 L 70 35 L 50 20 L 50 35 L 30 20 L 30 35 Z"
             stroke-dasharray="4,2" opacity="0.8" />
@@ -2254,8 +2094,7 @@
         <!-- Label -->
         <text x="22" y="60" fill="white" font-family="Arial" font-size="10" font-weight="bold"
             stroke="none">SHOFLOOR</text>
-    </svg>`}, {
-        id: "plant", name: "Plant", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"plant",name:"Plant",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="10" />
@@ -2283,8 +2122,7 @@
         <!-- Label -->
         <text x="32" y="65" fill="white" font-family="Arial" font-size="12" font-weight="bold"
             stroke="none">PLANT</text>
-    </svg>`}, {
-        id: "vgb", name: "VCB", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"vgb",name:"VCB",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="20" />
@@ -2312,12 +2150,8 @@
         <!-- Withdrawal/Truck Indicator (Vertical Side Lines) -->
         <line x1="20" y1="25" x2="20" y2="75" stroke-width="1" opacity="0.5" />
         <line x1="80" y1="25" x2="80" y2="75" stroke-width="1" opacity="0.5" />
-    </svg>`}, {
-        id: "mold", name: "Mold", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"mold",name:"Mold",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Material Feed / Sprue (Top) -->
-        <line x1="50" y1="0" x2="50" y2="25" />
-        <path d="M 45 10 L 50 15 L 55 10" stroke-width="1" />
 
         <!-- Upper Mold Half (Cope) -->
         <rect x="20" y="25" width="60" height="25" rx="1" />
@@ -2344,10 +2178,7 @@
         <line x1="30" y1="85" x2="30" y2="100" />
         <line x1="70" y1="85" x2="70" y2="100" />
 
-        <!-- Label -->
-        <text x="40" y="20" fill="white" font-family="Arial" font-size="8" font-weight="bold" stroke="none"></text>
-    </svg>`}, {
-        id: "machine", name: "Machine", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"machine",name:"Machine",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="20" />
@@ -2378,8 +2209,7 @@
         <!-- Label -->
         <text x="32" y="15" fill="white" font-family="Arial" font-size="8" font-weight="bold"
             stroke="none"></text>
-    </svg>`}, {
-        id: "brass_insert", name: "Brass Inset", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+    </svg>`},{id:"brass_insert",name:"Brass Inset",svg:`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <!-- Electrical Connection Lead (Top) -->
         <line x1="50" y1="0" x2="50" y2="20" />
@@ -2414,10 +2244,8 @@
         <!-- Label -->
         <text x="30" y="15" fill="white" font-family="Arial" font-size="7" font-weight="bold" stroke="none">BRASS
             INSERT</text>
-    </svg>`}]; class L {
-        constructor(e, t = {}) { if (this.container = typeof e == "string" ? document.getElementById(e) : e, !this.container) throw new Error("SLDViewer: Container not found."); this.config = t.config || { nodes: [], connections: [] }, this.liveData = t.liveData || {}, this.options = { zoom: 1, showToolbar: !0, ...t }, this.state = { nodes: JSON.parse(JSON.stringify(this.config.nodes || [])), connections: JSON.parse(JSON.stringify(this.config.connections || [])), zoom: this.options.zoom, isDataLive: !!(t.poll && t.poll.fetch), fullscreen: !1 }, this.pollTimer = null, this.initDOM(), this.render(), this.state.isDataLive && this.startPolling() } initDOM() {
-            this.container.classList.add("sld-viewer-container"), this.viewerMain = document.createElement("div"), this.viewerMain.className = "sld-viewer-main", this.viewerMain.innerHTML = `
-            <div class="sld-toolbar" style="${this.options.showToolbar ? "" : "display:none"}">
+    </svg>`}];class L{constructor(e,t={}){if(this.container=typeof e=="string"?document.getElementById(e):e,!this.container)throw new Error("SLDViewer: Container not found.");this.config=t.config||{nodes:[],connections:[]},this.liveData=t.liveData||{},this.options={zoom:1,showToolbar:!0,...t},this.state={nodes:JSON.parse(JSON.stringify(this.config.nodes||[])),connections:JSON.parse(JSON.stringify(this.config.connections||[])),zoom:this.options.zoom,isDataLive:!!(t.poll&&t.poll.fetch),fullscreen:!1},this.pollTimer=null,this.initDOM(),this.render(),this.state.isDataLive&&this.startPolling()}initDOM(){this.container.classList.add("sld-viewer-container"),this.viewerMain=document.createElement("div"),this.viewerMain.className="sld-viewer-main",this.viewerMain.innerHTML=`
+            <div class="sld-toolbar" style="${this.options.showToolbar?"":"display:none"}">
                 <span class="sld-title">SLD Dashboard</span>
                 <div class="sld-zoom-controls">
                     <button class="sld-btn sld-zoom-out">-</button>
@@ -2443,19 +2271,10 @@
                     <g class="layer-nodes"></g>
                 </svg>
             </div>
-        `, this.container.appendChild(this.viewerMain), this.canvas = this.viewerMain.querySelector(".sld-canvas"), this.layerNodes = this.viewerMain.querySelector(".layer-nodes"), this.layerConnections = this.viewerMain.querySelector(".layer-connections"), this.canvasContainer = this.viewerMain.querySelector(".sld-canvas-container"), this.zoomLevelText = this.viewerMain.querySelector(".sld-zoom-level"), this.bindEvents()
-        } bindEvents() { this.viewerMain.querySelector(".sld-zoom-in").onclick = () => this.updateZoom(this.state.zoom + .1), this.viewerMain.querySelector(".sld-zoom-out").onclick = () => this.updateZoom(this.state.zoom - .1), this.viewerMain.querySelector(".sld-zoom-reset").onclick = () => { this.updateZoom(1), this.canvasContainer.scrollLeft = 0, this.canvasContainer.scrollTop = 0 }, this.viewerMain.querySelector(".sld-fullscreen").onclick = () => this.toggleFullscreen(), document.addEventListener("fullscreenchange", () => { this.state.fullscreen = !!document.fullscreenElement, this.viewerMain.querySelector(".sld-fullscreen").textContent = this.state.fullscreen ? "Exit Fullscreen" : "Fullscreen" }) } updateZoom(e) { this.state.zoom = Math.max(.1, Math.min(3, e)), this.canvas.style.transform = `scale(${this.state.zoom})`, this.zoomLevelText && (this.zoomLevelText.textContent = Math.round(this.state.zoom * 100) + "%") } toggleFullscreen() { document.fullscreenElement ? document.exitFullscreen() : this.viewerMain.requestFullscreen().catch(e => { console.error(`Error attempting to enable fullscreen: ${e.message}`) }) } updateData(e) { this.liveData = { ...this.liveData, ...e }, this.render() } render() { this.layerNodes.innerHTML = "", this.layerConnections.innerHTML = "", this.state.connections.forEach(e => this.drawConnection(e)), this.state.nodes.forEach(e => this.drawNode(e)) } drawNode(e) { const t = document.createElementNS("http://www.w3.org/2000/svg", "g"); t.setAttribute("class", "sld-node-group"), t.setAttribute("transform", `translate(${e.x}, ${e.y})`); const a = f.find(i => i.id === e.symbolId); if (a) { const i = document.createElementNS("http://www.w3.org/2000/svg", "svg"); i.setAttribute("width", e.width), i.setAttribute("height", e.height), i.setAttribute("viewBox", "0 0 100 100"), i.classList.add("sld-node-symbol"); const r = a.svg.replace(/<svg[^>]*>/, "").replace(/<\/svg>/, ""); i.innerHTML = `<g transform="rotate(${e.rotation || 0} 50 50)">${r}</g>`, t.appendChild(i) } const s = this.liveData[e.id] || e.liveData || {}; if (e.statusRequired !== !1) { const i = document.createElementNS("http://www.w3.org/2000/svg", "circle"), r = Math.max(2, e.width * .05); i.setAttribute("cx", e.width - r - e.width * .05), i.setAttribute("cy", r + e.height * .05), i.setAttribute("r", r); const o = s.status || e.status || "white"; let n = o; o === "alarm" || o.includes("red") ? (n = "#ef4444", i.classList.add("sld-blink")) : o === "stale" ? n = "#eab308" : o === "healthy" || o === "online" || o === "green" ? n = "#22c55e" : o === "white" && (n = "#ffffff"), i.setAttribute("fill", n), i.setAttribute("class", `sld-status-indicator ${i.classList.contains("sld-blink") ? "sld-blink" : ""}`), t.appendChild(i) } this.drawSlots(t, e, s), this.layerNodes.appendChild(t) } sanitizeHTML(e) { const t = new DOMParser().parseFromString(e, "text/html"), a = ["B", "I", "U", "SPAN", "STRONG", "SMALL", "BR", "EM"], s = i => { for (let r = i.childNodes.length - 1; r >= 0; r--) { const o = i.childNodes[r]; if (o.nodeType === 1) if (a.includes(o.tagName)) { for (let n = o.attributes.length - 1; n >= 0; n--) { const l = o.attributes[n]; l.name !== "style" && o.removeAttribute(l.name) } s(o) } else { const n = document.createTextNode(o.textContent); i.replaceChild(n, o) } } }; return s(t.body), t.body.innerHTML } drawSlots(e, t, a) {
-            const r = l => l === "name" || l === "label" ? t.name : l === "id" ? t.id : a[l] !== void 0 ? a[l] : `[${l}]`, o = (l, h, c, d, p, w, k) => {
-                if (!h || h.length === 0) return; const g = document.createElementNS("http://www.w3.org/2000/svg", "g"); g.setAttribute("class", `sld-side-group sld-side-${l}`); const y = (h.length - 1) * w * 16, u = (h.length - 1) * k * 16, x = c - y / 2, T = d - u / 2, C = t.slotRotation && t.slotRotation[l] || 0; C !== 0 && g.setAttribute("transform", `rotate(${C}, ${c}, ${d})`), h.forEach((v, B) => {
-                    const S = r(v), P = !this.options.hideSlotKeys && v !== "label" && v !== "name" ? `${v.toUpperCase()}: ${S}` : `${S}`, A = this.sanitizeHTML(P), m = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject"), I = x + w * B * 16, E = T + k * B * 16, M = 300, b = 24; m.setAttribute("width", M), m.setAttribute("height", b); const D = I - M / 2, z = E - b / 2 + 1; m.setAttribute("x", D), m.setAttribute("y", z), m.setAttribute("class", "sld-slot-fo"), m.innerHTML = `
+        `,this.container.appendChild(this.viewerMain),this.canvas=this.viewerMain.querySelector(".sld-canvas"),this.layerNodes=this.viewerMain.querySelector(".layer-nodes"),this.layerConnections=this.viewerMain.querySelector(".layer-connections"),this.canvasContainer=this.viewerMain.querySelector(".sld-canvas-container"),this.zoomLevelText=this.viewerMain.querySelector(".sld-zoom-level"),this.bindEvents()}bindEvents(){this.viewerMain.querySelector(".sld-zoom-in").onclick=()=>this.updateZoom(this.state.zoom+.1),this.viewerMain.querySelector(".sld-zoom-out").onclick=()=>this.updateZoom(this.state.zoom-.1),this.viewerMain.querySelector(".sld-zoom-reset").onclick=()=>{this.updateZoom(1),this.canvasContainer.scrollLeft=0,this.canvasContainer.scrollTop=0},this.viewerMain.querySelector(".sld-fullscreen").onclick=()=>this.toggleFullscreen(),document.addEventListener("fullscreenchange",()=>{this.state.fullscreen=!!document.fullscreenElement,this.viewerMain.querySelector(".sld-fullscreen").textContent=this.state.fullscreen?"Exit Fullscreen":"Fullscreen"})}updateZoom(e){this.state.zoom=Math.max(.1,Math.min(3,e)),this.canvas.style.transform=`scale(${this.state.zoom})`,this.zoomLevelText&&(this.zoomLevelText.textContent=Math.round(this.state.zoom*100)+"%")}toggleFullscreen(){document.fullscreenElement?document.exitFullscreen():this.viewerMain.requestFullscreen().catch(e=>{console.error(`Error attempting to enable fullscreen: ${e.message}`)})}updateData(e){this.liveData={...this.liveData,...e},this.render()}render(){this.layerNodes.innerHTML="",this.layerConnections.innerHTML="",this.state.connections.forEach(e=>this.drawConnection(e)),this.state.nodes.forEach(e=>this.drawNode(e))}drawNode(e){const t=document.createElementNS("http://www.w3.org/2000/svg","g");t.setAttribute("class","sld-node-group"),t.setAttribute("transform",`translate(${e.x}, ${e.y})`);const a=f.find(i=>i.id===e.symbolId);if(a){const i=document.createElementNS("http://www.w3.org/2000/svg","svg");i.setAttribute("width",e.width),i.setAttribute("height",e.height),i.setAttribute("viewBox","0 0 100 100"),i.classList.add("sld-node-symbol");const r=a.svg.replace(/<svg[^>]*>/,"").replace(/<\/svg>/,"");i.innerHTML=`<g transform="rotate(${e.rotation||0} 50 50)">${r}</g>`,t.appendChild(i)}const s=this.liveData[e.id]||e.liveData||{};if(e.statusRequired!==!1){const i=document.createElementNS("http://www.w3.org/2000/svg","circle"),r=Math.max(2,e.width*.05);i.setAttribute("cx",e.width-r-e.width*.05),i.setAttribute("cy",r+e.height*.05),i.setAttribute("r",r);const o=s.status||e.status||"white";let n=o;o==="alarm"||o.includes("red")?(n="#ef4444",i.classList.add("sld-blink")):o==="stale"?n="#eab308":o==="healthy"||o==="online"||o==="green"?n="#22c55e":o==="white"&&(n="#ffffff"),i.setAttribute("fill",n),i.setAttribute("class",`sld-status-indicator ${i.classList.contains("sld-blink")?"sld-blink":""}`),t.appendChild(i)}this.drawSlots(t,e,s),this.layerNodes.appendChild(t)}sanitizeHTML(e){const t=new DOMParser().parseFromString(e,"text/html"),a=["B","I","U","SPAN","STRONG","SMALL","BR","EM"],s=i=>{for(let r=i.childNodes.length-1;r>=0;r--){const o=i.childNodes[r];if(o.nodeType===1)if(a.includes(o.tagName)){for(let n=o.attributes.length-1;n>=0;n--){const l=o.attributes[n];l.name!=="style"&&o.removeAttribute(l.name)}s(o)}else{const n=document.createTextNode(o.textContent);i.replaceChild(n,o)}}};return s(t.body),t.body.innerHTML}drawSlots(e,t,a){const r=l=>l==="name"||l==="label"?t.name:l==="id"?t.id:a[l]!==void 0?a[l]:`[${l}]`,o=(l,h,y,d,p,w,k)=>{if(!h||h.length===0)return;const g=document.createElementNS("http://www.w3.org/2000/svg","g");g.setAttribute("class",`sld-side-group sld-side-${l}`);const c=(h.length-1)*w*16,u=(h.length-1)*k*16,x=y-c/2,T=d-u/2,C=t.slotRotation&&t.slotRotation[l]||0;C!==0&&g.setAttribute("transform",`rotate(${C}, ${y}, ${d})`),h.forEach((v,B)=>{const S=r(v),P=!this.options.hideSlotKeys&&v!=="label"&&v!=="name"?`${v.toUpperCase()}: ${S}`:`${S}`,A=this.sanitizeHTML(P),m=document.createElementNS("http://www.w3.org/2000/svg","foreignObject"),I=x+w*B*16,E=T+k*B*16,M=300,b=24;m.setAttribute("width",M),m.setAttribute("height",b);const D=I-M/2,z=E-b/2+1;m.setAttribute("x",D),m.setAttribute("y",z),m.setAttribute("class","sld-slot-fo"),m.innerHTML=`
                     <div xmlns="http://www.w3.org/1999/xhtml" class="sld-slot-wrapper" style="width: ${M}px; display: flex; justify-content: center; align-items: center;">
                         <div class="sld-slot-html">
                             ${A}
                         </div>
                     </div>
-                `, g.appendChild(m)
-                }), e.appendChild(g)
-            }, n = t.slots || { top: [], right: [], bottom: [], left: [] }; o("top", n.top, t.width / 2, -10 - 16 / 2, "middle", 0, -1), o("bottom", n.bottom, t.width / 2, t.height + 10 + 16 / 2, "middle", 0, 1), o("right", n.right, t.width + 10 + 15, t.height / 2, "middle", 0, 1), o("left", n.left, -25, t.height / 2, "middle", 0, 1)
-        } drawConnection(e) { const t = this.state.nodes.find(y => y.id === e.from), a = this.state.nodes.find(y => y.id === e.to); if (!t || !a) return; const s = t.x + t.width / 2, i = t.y + t.height / 2, r = a.x + a.width / 2, o = a.y + a.height / 2, n = t.width / 2, l = t.height / 2; let h = s, c = i, d = r, p = o, w = ""; const k = document.createElementNS("http://www.w3.org/2000/svg", "path"); if (k.setAttribute("class", "sld-connection-line"), e.type === "custom") { const y = e.waypoints && e.waypoints[0] || { x: r, y: o }, u = e.waypoints && e.waypoints[e.waypoints.length - 1] || { x: s, y: i }; Math.abs(y.x - s) > Math.abs(y.y - i) ? h = s + (y.x > s ? n : -n) : c = i + (y.y > i ? l : -l), Math.abs(r - u.x) > Math.abs(o - u.y) ? d = r + (r > u.x ? -n : n) : p = o + (o > u.y ? -l : l), w = `M ${h} ${c} `, e.waypoints && e.waypoints.forEach(x => { w += `L ${x.x} ${x.y} ` }), w += `L ${d} ${p}` } else { const y = Math.abs(r - s), u = Math.abs(o - i); if (y > u) { h = s + (r > s ? n : -n), d = r + (r > s ? -n : n); const x = h + (d - h) / 2; w = `M ${h} ${c} L ${x} ${c} L ${x} ${p} L ${d} ${p}` } else { c = i + (o > i ? l : -l), p = o + (o > i ? -l : l); const x = c + (p - c) / 2; w = `M ${h} ${c} L ${h} ${x} L ${d} ${x} L ${d} ${p}` } } k.setAttribute("d", w); const g = e.arrowMode || "none"; (g === "forward" || g === "both") && k.setAttribute("marker-end", "url(#sld-marker-end)"), (g === "backward" || g === "both") && k.setAttribute("marker-start", "url(#sld-marker-start)"), this.layerConnections.appendChild(k) } startPolling() { if (this.pollTimer) return; const e = this.options.poll && this.options.poll.interval || 2e3, t = this.options.poll && this.options.poll.fetch; if (!t) return; const a = async () => { try { const s = await t(); this.updateData(s) } catch (s) { console.error("SLDViewer Polling Error:", s) } this.pollTimer = setTimeout(a, e) }; a() } stopPolling() { this.pollTimer && (clearTimeout(this.pollTimer), this.pollTimer = null) } destroy() { this.stopPolling(), this.viewerMain.remove(), this.container.classList.remove("sld-viewer-container") }
-    } return L
-}));
+                `,g.appendChild(m)}),e.appendChild(g)},n=t.slots||{top:[],right:[],bottom:[],left:[]};o("top",n.top,t.width/2,-10-16/2,"middle",0,-1),o("bottom",n.bottom,t.width/2,t.height+10+16/2,"middle",0,1),o("right",n.right,t.width+10+15,t.height/2,"middle",0,1),o("left",n.left,-25,t.height/2,"middle",0,1)}drawConnection(e){const t=this.state.nodes.find(c=>c.id===e.from),a=this.state.nodes.find(c=>c.id===e.to);if(!t||!a)return;const s=t.x+t.width/2,i=t.y+t.height/2,r=a.x+a.width/2,o=a.y+a.height/2,n=t.width/2,l=t.height/2;let h=s,y=i,d=r,p=o,w="";const k=document.createElementNS("http://www.w3.org/2000/svg","path");if(k.setAttribute("class","sld-connection-line"),e.type==="custom"){const c=e.waypoints&&e.waypoints[0]||{x:r,y:o},u=e.waypoints&&e.waypoints[e.waypoints.length-1]||{x:s,y:i};Math.abs(c.x-s)>Math.abs(c.y-i)?h=s+(c.x>s?n:-n):y=i+(c.y>i?l:-l),Math.abs(r-u.x)>Math.abs(o-u.y)?d=r+(r>u.x?-n:n):p=o+(o>u.y?-l:l),w=`M ${h} ${y} `,e.waypoints&&e.waypoints.forEach(x=>{w+=`L ${x.x} ${x.y} `}),w+=`L ${d} ${p}`}else{const c=Math.abs(r-s),u=Math.abs(o-i);if(c>u){h=s+(r>s?n:-n),d=r+(r>s?-n:n);const x=h+(d-h)/2;w=`M ${h} ${y} L ${x} ${y} L ${x} ${p} L ${d} ${p}`}else{y=i+(o>i?l:-l),p=o+(o>i?-l:l);const x=y+(p-y)/2;w=`M ${h} ${y} L ${h} ${x} L ${d} ${x} L ${d} ${p}`}}k.setAttribute("d",w);const g=e.arrowMode||"none";(g==="forward"||g==="both")&&k.setAttribute("marker-end","url(#sld-marker-end)"),(g==="backward"||g==="both")&&k.setAttribute("marker-start","url(#sld-marker-start)"),this.layerConnections.appendChild(k)}startPolling(){if(this.pollTimer)return;const e=this.options.poll&&this.options.poll.interval||2e3,t=this.options.poll&&this.options.poll.fetch;if(!t)return;const a=async()=>{try{const s=await t();this.updateData(s)}catch(s){console.error("SLDViewer Polling Error:",s)}this.pollTimer=setTimeout(a,e)};a()}stopPolling(){this.pollTimer&&(clearTimeout(this.pollTimer),this.pollTimer=null)}destroy(){this.stopPolling(),this.viewerMain.remove(),this.container.classList.remove("sld-viewer-container")}}return L}));
