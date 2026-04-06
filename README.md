@@ -1,8 +1,8 @@
 # ⚡ SLD Designer & Viewer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.1.0-green.svg)](https://github.com/yuvarajd/sld)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yuvarajd/sld/pulls)
+[![Version](https://img.shields.io/badge/version-1.1.0-green.svg)](https://github.com/Trpz3/sld)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Trpz3/sld/pulls)
 
 A high-performance, professional-grade Single Line Diagram (SLD) logic designer and rendering engine. Built with vanilla JavaScript and SVG, designed for electrical engineering, industrial automation, and power systems monitoring.
 
@@ -33,7 +33,7 @@ A high-performance, professional-grade Single Line Diagram (SLD) logic designer 
 Clone the repository and install the development dependencies:
 
 ```bash
-git clone https://github.com/yuvarajd/sld.git
+git clone https://github.com/Trpz3/sld.git
 cd sld
 npm install
 ```
