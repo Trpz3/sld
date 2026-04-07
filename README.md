@@ -9,6 +9,8 @@ A high-performance, professional-grade Single Line Diagram (SLD) logic designer 
 
 [**Explore the Live Demo »**](https://trpz3.github.io/sld/)
 
+[***Live Example »***](https://trpz3.github.io/sld/test-module.html)
+
 ---
 
 ![SLD Designer Screenshot](image.png)
