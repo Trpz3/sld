@@ -89,6 +89,8 @@ const btnSelect = document.getElementById('btn-select');
 const btnConnect = document.getElementById('btn-connect');
 const btnConnectCustom = document.getElementById('btn-connect-custom');
 const btnJson = document.getElementById('btn-json');
+const btnLoadJson = document.getElementById('btn-load-json');
+const fileLoadJson = document.getElementById('file-load-json');
 const btnSave = document.getElementById('btn-save');
 const btnMock = document.getElementById('btn-mock-data');
 
@@ -133,6 +135,7 @@ const jsonPreview = document.getElementById('json-export-preview');
 const jsonModalOverlay = document.getElementById('json-modal-overlay');
 const btnCloseJson = document.getElementById('btn-close-json');
 const btnDownloadJson = document.getElementById('btn-download-json');
+const btnLoadJsonModal = document.getElementById('btn-load-json-modal');
 
 // Temporary trace element
 let tracerNode = null;
@@ -146,31 +149,64 @@ function init() {
     if (saved) {
         try {
             const data = JSON.parse(saved);
-            appState.nodes = data.nodes || [];
-            appState.connections = data.connections || [];
-            if (data.hideSlotKeys !== undefined) {
-                appState.hideSlotKeys = data.hideSlotKeys;
-                chkHideKeys.checked = appState.hideSlotKeys;
-            }
-            if (state.hideSlotKeys !== undefined) {
-                appState.hideSlotKeys = state.hideSlotKeys;
-                chkHideKeys.checked = appState.hideSlotKeys;
-            }
-            appState.nodes.forEach(n => {
-                if (n.size === undefined) n.size = 100;
-                if (n.statusRequired === undefined) n.statusRequired = true;
-                const num = parseInt(n.id.replace('node_', '')) || 0;
-                if (num >= appState.nextNodeId) appState.nextNodeId = num + 1;
-            });
-            appState.connections.forEach(c => {
-                const num = parseInt(c.id.replace('conn_', '')) || 0;
-                if (num >= appState.nextConnId) appState.nextConnId = num + 1;
-            });
+            applyConfig(data, false); // Don't save back to localStorage on initial load
         } catch (e) { }
     }
 
     saveHistory();
     renderAll();
+}
+
+/**
+ * Applies a configuration object to the application state.
+ * @param {Object} data The configuration data.
+ * @param {boolean} shouldSave Whether to immediately save to local storage (default: true).
+ */
+function applyConfig(data, shouldSave = true) {
+    if (!data) return;
+
+    appState.nodes = data.nodes || [];
+    appState.connections = data.connections || [];
+
+    if (data.hideSlotKeys !== undefined) {
+        appState.hideSlotKeys = data.hideSlotKeys;
+        if (chkHideKeys) chkHideKeys.checked = appState.hideSlotKeys;
+    }
+
+    // Reset next IDs based on loaded data
+    appState.nextNodeId = 1000;
+    appState.nextConnId = 1000;
+
+    appState.nodes.forEach(n => {
+        if (n.size === undefined) n.size = 100;
+        if (n.statusRequired === undefined) n.statusRequired = true;
+
+        // Extract number from node_1001 format
+        const idStr = String(n.id);
+        const num = parseInt(idStr.replace('node_', '')) || 0;
+        if (num >= appState.nextNodeId) appState.nextNodeId = num + 1;
+    });
+
+    appState.connections.forEach(c => {
+        const idStr = String(c.id);
+        const num = parseInt(idStr.replace('conn_', '')) || 0;
+        if (num >= appState.nextConnId) appState.nextConnId = num + 1;
+    });
+
+    if (shouldSave) {
+        localStorage.setItem('sld-config', JSON.stringify({
+            nodes: appState.nodes,
+            connections: appState.connections,
+            hideSlotKeys: appState.hideSlotKeys,
+            version: data.version || "1.0"
+        }));
+    }
+
+    if (jsonModalOverlay) jsonModalOverlay.style.display = 'none';
+    renderAll();
+    saveHistory();
+    selectNode(null);
+    selectConnection(null);
 }
 
 function loadPalette() {
@@ -371,7 +407,13 @@ function bindEvents() {
         const side = slotSide.value;
         const key = slotKey.value.trim();
         if (!key) return;
-        if (!node.slots[side].includes(key)) {
+        if (!node.slots[side]) {
+            node.slots[side] = [key];
+            slotKey.value = '';
+            saveHistory();
+            updatePropPanel();
+            renderAll();
+        } else if (!node.slots[side].includes(key)) {
             node.slots[side].push(key);
             slotKey.value = '';
             saveHistory();
@@ -398,10 +440,41 @@ function bindEvents() {
         const configStr = JSON.stringify({
             nodes: appState.nodes,
             connections: appState.connections,
+            hideSlotKeys: appState.hideSlotKeys,
             version: "1.0"
         }, null, 2);
         jsonPreview.textContent = configStr;
         jsonModalOverlay.style.display = 'flex';
+    };
+
+    if (btnLoadJson) {
+        btnLoadJson.onclick = () => {
+            fileLoadJson.click();
+        };
+    }
+
+    if (btnLoadJsonModal) {
+        btnLoadJsonModal.onclick = () => {
+            fileLoadJson.click();
+        };
+    }
+
+    fileLoadJson.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            try {
+                const data = JSON.parse(event.target.result);
+                applyConfig(data, true);
+                // Reset file input for next use
+                fileLoadJson.value = '';
+            } catch (err) {
+                alert('Error parsing JSON: ' + err.message);
+            }
+        };
+        reader.readAsText(file);
     };
 
     btnCloseJson.onclick = () => {
