@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SLDViewer Module Test</title>
-    <link rel="stylesheet" href="./dist/sld-viewer.css">
+    <link rel="stylesheet" href="./dist/sld.css">
     <style>
         body {
             margin: 0;
@@ -80,7 +80,7 @@
 
         const viewer = new SLDV('my-viewer-container', {
             config: sampleConfig,
-            hideSlotKeys: true, 
+            hideSlotKeys: true,
             poll: {
                 interval: 2000,
                 fetch: async () => {

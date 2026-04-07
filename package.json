@@ -1,11 +1,23 @@
 {
   "name": "@trpz3/sld",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Professional Single Line Diagram (SLD) logic designer and rendering engine.",
-  "main": "dist/sld-viewer.umd.js",
-  "module": "dist/sld-viewer.es.js",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE",
+    "image.png"
   ],
   "repository": {
     "type": "git",
@@ -13,7 +25,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run sync-symbols && vite build",
+    "build": "npm run sync-symbols && vite build && mv dist/SLDViewer.d.ts dist/index.d.ts && rm -f dist/SLDSymbols.d.ts",
     "preview": "vite preview",
     "sync-symbols": "cat js/symbols/registry.js | sed 's/window.SLDSymbols =/export const SLDSymbols =/' > js/lib/SLDSymbols.js",
     "prepublishOnly": "npm run build"
@@ -34,9 +46,7 @@
   },
   "homepage": "https://github.com/Trpz3/sld#readme",
   "devDependencies": {
-    "vite": "^6.0.0"
-  },
-  "dependencies": {
-    "jquery": "^3.7.1"
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.5.4"
   }
 }

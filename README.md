@@ -23,59 +23,31 @@ A high-performance, professional-grade Single Line Diagram (SLD) logic designer 
 - **Instant Export**: Download your configuration as a standardized JSON file.
 
 ### 👓 SLD Viewer (Production Module)
-- **Zero Dependencies**: Lightweight 15KB bundle for seamless integration into any web app.
-- **Real-time Synchronization**: Built-in polling and push support for live status indicators and telemetry.
+- **🚀 Zero Dependencies**: Lightweight ESM bundle with NO external dependencies (jQuery removed).
+- **TypeScript Ready**: Full type definitions included for a professional developer experience.
+- **Real-time Synchronization**: Built-in polling support for live status indicators and telemetry.
 - **Rich Formatting**: Support for HTML-enhanced labels and status colors.
 - **Extensible**: Fully customizable SVG symbol library.
 
 ## 🚀 Quick Start
 
 ### 1. Installation
+
 Install the package via NPM:
 
 ```bash
 npm i @trpz3/sld
 ```
 
-### 2. Development (Local)
-If you want to contribute or use the Designer locally:
-```bash
-git clone https://github.com/trpz3/sld.git
-cd sld
-npm install
-npm run dev
-```
-Navigate to `http://localhost:5173` to start building your diagram.
+### 2. Integration
 
-### 3. Production Build
-Optimize the viewer library for production use:
-
-```bash
-npm run build
-```
-The output will be available in the `dist/` directory.
-
-## 📂 Project Structure
-
-```text
-├── css/                # Global designer styles
-├── dist/               # Production-ready viewer bundle (CSS + UMD/ESM JS)
-├── js/
-│   ├── lib/            # Core SLD Viewer source code
-│   └── symbols/        # Master SVG symbol definitions
-├── index.html          # Main Designer interface
-├── viewer.html         # Standalone viewer example
-└── README.md
-```
-
-## 🛠 Integration Example
-
-Integrating the viewer into your existing dashboard is simple:
+Integrating the viewer into your dashboard is direct and type-safe:
 
 ```javascript
-import { SLDViewer } from '@trpz3/sld';
+import '@trpz3/sld/style.css';
+import { createSLDViewer } from '@trpz3/sld';
 
-const viewer = new SLDViewer('sld-container', {
+const viewer = createSLDViewer('sld-container', {
     config: mySavedConfigJson, // The JSON exported from the Designer
     liveData: { "node_1001": { status: "healthy", voltage: "230V" } },
     poll: {
@@ -86,6 +58,38 @@ const viewer = new SLDViewer('sld-container', {
         }
     }
 });
+```
+
+## 🛠 Development
+
+### Local Setup
+If you want to contribute or use the Designer locally:
+```bash
+git clone https://github.com/trpz3/sld.git
+cd sld
+npm install
+npm run dev
+```
+Navigate to `http://localhost:5173` to start building your diagram.
+
+### Production Build
+Optimize the viewer library for production use:
+```bash
+npm run build
+```
+The output (JS, CSS, and Types) will be available in the `dist/` directory.
+
+## 📂 Project Structure
+
+```text
+├── css/                # Global designer styles
+├── dist/               # Build output (ESM, UMD, CSS, Types)
+├── js/
+│   ├── lib/            # Core SLD Viewer source code
+│   └── symbols/        # Master SVG symbol definitions
+├── index.html          # Main Designer interface
+├── viewer.html         # Standalone viewer example
+└── README.md
 ```
 
 ## 🤝 Contributing

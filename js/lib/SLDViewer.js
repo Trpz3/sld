@@ -402,3 +402,13 @@ export default class SLDViewer {
         this.container.classList.remove('sld-viewer-container');
     }
 }
+
+/**
+ * Factory function to create an SLDViewer instance.
+ * @param {HTMLElement|string} container - The target DOM element or its ID.
+ * @param {Object} options - Configuration options.
+ * @returns {SLDViewer}
+ */
+export function createSLDViewer(container, options) {
+    return new SLDViewer(container, options);
+}
