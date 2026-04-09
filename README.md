@@ -5,7 +5,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/@trpz3/sld.svg)](https://www.npmjs.com/package/@trpz3/sld)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Trpz3/sld/pulls)
 
-A high-performance, professional-grade Single Line Diagram (SLD) logic designer and rendering engine. Built with vanilla JavaScript and SVG, designed for electrical engineering, industrial automation, and power systems monitoring.
+A development-grade Single Line Diagram (SLD) logic designer and rendering engine. Built with vanilla JavaScript and SVG, designed for electrical engineering, industrial automation, and power systems monitoring.
 
 [**Explore the Live Demo »**](https://trpz3.github.io/sld/)
 
